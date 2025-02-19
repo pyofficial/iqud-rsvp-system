@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Dashboard;
+use App\Livewire\Event;
 use App\Livewire\Login;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -24,5 +25,6 @@ Route::get('/', Login::class)->name('login');
 
 Route::group(['middleware' => ['auth:web', 'prevent-back-history']], function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
+    Route::get('/events', Event::class)->name('events');
     Route::get('/logout', [Dashboard::class, 'logout'])->name('logout');
 });
