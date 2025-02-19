@@ -18,4 +18,4 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', Login::class)->name('login');
+Route::get('/login', Login::class)->name('login');

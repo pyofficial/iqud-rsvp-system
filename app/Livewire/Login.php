@@ -2,32 +2,36 @@
 
 namespace App\Livewire;
 
+use App\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
+use Livewire\Attributes\Validate;
 use Livewire\Component;
 
 class Login extends Component
 {
-    public $email = '';
-    public $password = '';
+    #[Validate('required|email')]
+    public $email;
+    #[Validate('required')]
+    public $password;
 
     public function authenticate()
     {
-        $credentials = $this->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
-        ]);
+        $this->validate();
 
+        $credentials = [
+            'email' => $this->email,
+            'password' => $this->password,
+        ];
         if (Auth::attempt($credentials)) {
-            $this->redirect(route('dashboard'));
-        } else {
-            $this->addError('email', 'These credentials do not match our records.');
+            session()->flash('message', 'You have successfully logged in!');
+            return $this->redirectRoute('dashboard', navigate: true);
         }
+
+        session()->flash('error', 'Invalid credentials!');
     }
 
     public function render()
     {
-        Log::info('Attempting to render Login component');
         return view('livewire.login');
     }
 }
