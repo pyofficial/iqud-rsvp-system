@@ -1,6 +1,8 @@
 <?php
 
+use App\Livewire\Dashboard;
 use App\Livewire\Login;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +20,12 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/login', Login::class)->name('login');
+Route::get('/', Login::class)->name('login');
+Route::post('/logout', function () { 
+    Auth::logout(); 
+    return redirect('/login'); 
+})->name('logout');
+
+Route::middleware('auth')->group(function (){
+    Route::get('/dashboard', Dashboard::class)->name('dashboard');
+});

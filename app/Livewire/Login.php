@@ -2,7 +2,6 @@
 
 namespace App\Livewire;
 
-use App\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
@@ -23,7 +22,7 @@ class Login extends Component
             'password' => $this->password,
         ];
         if (Auth::attempt($credentials)) {
-            session()->flash('message', 'You have successfully logged in!');
+            session()->flash('message', 'You have successfully logged in !');
             return $this->redirectRoute('dashboard', navigate: true);
         }
 
@@ -32,6 +31,9 @@ class Login extends Component
 
     public function render()
     {
+        if (Auth::check()) {
+            return view('livewire.dashboard');
+        }
         return view('livewire.login');
     }
 }
