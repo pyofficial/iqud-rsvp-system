@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Event as ModelsEvent;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -21,7 +22,7 @@ class Event extends Component
         Paginator::useBootstrap();
 
         return view('livewire.event', [
-            'events' => Event::withCount('rsvps')->where('date', '>=', now())->orderBy('date')->paginate()
+            'events' => ModelsEvent::withCount('rsvps')->where('date', '>=', now())->orderBy('date')->paginate(10)
         ]);
     }
 }

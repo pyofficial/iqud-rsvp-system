@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255);
-            $table->timestamp('date');
+            $table->dateTime('date');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Dashboard;
+use App\Livewire\Event;
 use App\Livewire\Login;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -28,4 +29,5 @@ Route::post('/logout', function () {
 
 Route::middleware('auth')->group(function (){
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
+    Route::get('/events', Event::class)->name('events');
 });

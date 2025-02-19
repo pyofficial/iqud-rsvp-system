@@ -13,6 +13,10 @@ class Event extends Model
 
     protected $fillable = ['name', 'date'];
 
+    protected $casts = [
+        'date' => 'datetime'
+    ];    
+
     public function rsvps(): HasMany
     {
         return $this->hasMany(EventRsvp::class);
