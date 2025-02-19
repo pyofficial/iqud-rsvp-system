@@ -18,7 +18,7 @@ class Event extends Component
     }
     public function render()
     {
-        Paginator::useBootstrap(); // For Bootstrap styled pagination
+        Paginator::useBootstrap();
 
         return view('livewire.event', [
             'events' => Event::withCount('rsvps')->where('date', '>=', now())->orderBy('date')->paginate()
