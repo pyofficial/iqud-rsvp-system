@@ -21,11 +21,8 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', Login::class)->name('login');
-Route::post('/logout', function () { 
-    Auth::logout(); 
-    return redirect('/login'); 
-})->name('logout');
 
-Route::middleware('auth')->group(function (){
+Route::group(['middleware' => ['auth:web', 'prevent-back-history']], function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
+    Route::get('/logout', [Dashboard::class, 'logout'])->name('logout');
 });
