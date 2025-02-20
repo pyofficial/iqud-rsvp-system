@@ -29,7 +29,7 @@
                                 @foreach ($events as $event)
                                     <tr>
                                         <td>{{ $event->name }}</td>
-                                        <td>{{ $event->date->format('Y-m-d H:i') }}</td>
+                                        <td>{{ $event->date->format('Y-m-d H:i A') }}</td>
                                         <td>{{ $event->users_count ?? 0 }}</td>
                                         @auth
                                             <td>
