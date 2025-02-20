@@ -34,9 +34,11 @@
                                         @auth
                                             <td>
                                                 @if(auth()->user()->events->contains('id', $event->id))
-                                                    <button wire:click="toggleRsvp({{ $event->id }})" class="btn btn-outline-danger btn-sm">Cancel RSVP</button>
+                                                    <a class="btn btn-outline-danger" href="{{ route('detach', ['id' => $event->id]) }}" role="button">Leave</a>
+                                                    {{--<a class="btn btn-outline-danger" wire:click="$emit('leaveEvent', $event->id)" role="button">Leave</a>--}}
                                                 @else
-                                                    <button wire:click="toggleRsvp({{ $event->id }})" class="btn btn-outline-primary btn-sm">Attend RSVP</button>
+                                                    <a class="btn btn-outline-primary" href="{{ route('attach', ['id' => $event->id]) }}" role="button">Participate</a>
+                                                    {{--<a class="btn btn-outline-primary" wire:click="$emit('addEvent', $event->id)" role="button">Participate</a>--}}
                                                 @endif
                                             </td>
                                         @endauth

@@ -10,7 +10,11 @@ use Livewire\Component;
 
 class Event extends Component
 {
-    protected $listeners = ['rsvpUpdated' => 'refreshList'];
+    protected $listeners = [
+        'rsvpUpdated' => 'refreshList',
+        'addEvent' => 'atach',
+        'leaveEvent' => 'detch',
+    ];
 
     // public function mount()
     // {
