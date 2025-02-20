@@ -22,9 +22,11 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', Login::class)->name('login');
+Route::get('/events', Event::class)->name('events');
 
 Route::group(['middleware' => ['auth:web', 'prevent-back-history']], function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
-    Route::get('/events', Event::class)->name('events');
+    Route::get('/detach/{id}', [Event::class, 'detach'])->name('detach');
+    Route::get('/attach/{id}', [Event::class, 'attach'])->name('attach');
     Route::get('/logout', [Dashboard::class, 'logout'])->name('logout');
 });

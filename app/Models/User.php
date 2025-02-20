@@ -15,6 +15,7 @@ class User extends Authenticatable
     use HasApiTokens;
     protected $fillable = ['first_name','last_name','email','password'];
     protected $hidden = ['password'];
+    // protected $with = ['events'];
 
     public function rsvps(): HasMany
     {
@@ -26,7 +27,8 @@ class User extends Authenticatable
         return $this->belongsToMany(Event::class, 'event_rsvps')
             ->using(EventRsvp::class)
             ->withTimestamps()
-            ->withPivot('deleted_at');
+            ->withPivot('deleted_at')
+            ->wherePivotNull('deleted_at');
     }
 
 }

@@ -25,6 +25,10 @@ class EventSeeder extends Seeder
             ['name' => 'Movie Premiere', 'date' => Carbon::now()->addDays(8)],
             ['name' => 'Cooking Class', 'date' => Carbon::now()->addDays(35)],
             ['name' => 'Yoga Retreat', 'date' => Carbon::now()->addDays(50)],
+            ['name' => 'Yoga Retreat', 'date' => Carbon::now()->addDays(50)],
+            ['name' => 'Yoga Retreat', 'date' => Carbon::now()->addDays(50)],
+            ['name' => 'Yoga Retreat', 'date' => Carbon::now()->addDays(50)],
+            ['name' => 'Yoga Retreat', 'date' => Carbon::now()->addDays(50)],
         ];
 
         foreach ($events as $event) {
