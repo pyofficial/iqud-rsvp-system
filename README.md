@@ -33,10 +33,21 @@ DB_PASSWORD=
 ```
 
 ### 4️⃣ Run Migrations and Seed Data
+
+#### 🏗️ Migrations Created:
+- `users`
+- `events`
+- `event_rsvps`
+
+#### 🌱 Seeders Created:
+- `UsersSeeder`
+- `EventsSeeder`
+- `EventRsvpSeeder` (for attendees count)
+
+Run the following command to create tables and seed initial data:
 ```sh
 php artisan migrate --seed
 ```
-This will create the required database tables and seed some initial data.
 
 ### 5️⃣ Serve the Application
 ```sh
@@ -45,12 +56,12 @@ php artisan serve
 The application will be available at `http://127.0.0.1:8000/`
 
 ## 📌 Features
-- Guest user can check Events
+- Guest users can check events
 - User authentication
-- RSVP system for loggedin users to attend / Withdraw events
+- RSVP system for logged-in users to attend/withdraw from events
 
 ## 🛠️ Technologies Used
 - Laravel 10
 - MySQL
 - Livewire (for interactive UI components)
-- Bootstarp CSS (for styling)
+- Bootstrap CSS (for styling)
