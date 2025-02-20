@@ -30,7 +30,7 @@
                                     <tr>
                                         <td>{{ $event->name }}</td>
                                         <td>{{ $event->date->format('Y-m-d H:i') }}</td>
-                                        <td>{{ $event->rsvps_count ?? 0 }}</td>
+                                        <td>{{ $event->users_count ?? 0 }}</td>
                                         @auth
                                             <td>
                                                 @if(auth()->user()->events->contains('id', $event->id))
