@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div wire:poll class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <table class="table table-striped table-hover">
