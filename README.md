@@ -45,14 +45,12 @@ php artisan serve
 The application will be available at `http://127.0.0.1:8000/`
 
 ## 📌 Features
+- Guest user can check Events
 - User authentication
-- event listing 
-- RSVP system for users to attend events
-- Admin panel for event management
+- RSVP system for loggedin users to attend / Withdraw events
 
 ## 🛠️ Technologies Used
 - Laravel 10
 - MySQL
 - Livewire (for interactive UI components)
 - Bootstarp CSS (for styling)
-
