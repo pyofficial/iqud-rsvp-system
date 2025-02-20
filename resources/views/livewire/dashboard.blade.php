@@ -6,7 +6,7 @@
                 <div class="card-header">
                     <div class="row align-items-center">
                         <div class="col-8">
-                            <h5 class="card-title mb-0">List of Added Events</h5>
+                            <h5 class="card-title mb-0">List of Participated Events</h5>
                         </div>
                         <div class="col-4 text-end">
                             <i class="feather icon-more-vertical font-20 text-primary"></i>
