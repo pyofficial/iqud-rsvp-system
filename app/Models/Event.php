@@ -27,7 +27,8 @@ class Event extends Model
         return $this->belongsToMany(User::class, 'event_rsvps')
             ->using(EventRsvp::class)
             ->withTimestamps()
-            ->withPivot('deleted_at');
+            ->withPivot('deleted_at')
+            ->wherePivotNull('deleted_at');
     }
 
 }

@@ -11,7 +11,10 @@ class Dashboard extends Component
 
     public function render()
     {
-        return view('livewire.dashboard');
+        // dd(auth()->user()->events()->get()->toArray());
+        $events = auth()->user()->events()->get();
+        // dd($events);
+        return view('livewire.dashboard', ['events' => $events]);
     }
 
     /**
