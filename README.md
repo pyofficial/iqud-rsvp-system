@@ -65,3 +65,25 @@ The application will be available at `http://127.0.0.1:8000/`
 - MySQL
 - Livewire (for interactive UI components)
 - Bootstrap CSS (for styling)
+
+## 🌐 Routes
+
+### 1️⃣ Login Page
+- **URL:** `http://127.0.0.1:8000/`
+- Allows users to log in to access RSVP functionality.
+![alt text](login.png)
+
+### 2️⃣ Guest Users: View Events
+- **URL:** `http://127.0.0.1:8000/events`
+- Guests can browse available events without logging in.
+![alt text](guest-events-list.png)
+
+### 3️⃣ Logged-in User Dashboard
+- **URL:** `http://127.0.0.1:8000/dashboard`
+- Displays a list of events the user has participated in.
+![alt text](dashboard.png)
+
+### 4️⃣ Logged-in User: Manage RSVPs
+- **URL:** `http://127.0.0.1:8000/events`
+- Users can view events and choose to attend or withdraw RSVP.
+![alt text](logged-in-user-events-rsvp.png)
