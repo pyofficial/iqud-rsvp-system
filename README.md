@@ -57,8 +57,10 @@ The application will be available at `http://127.0.0.1:8000/`
 
 ## 📌 Features
 - Guest users can check events
+- Events & Rsvp counts hot reload without page refresh. 
 - User authentication
 - RSVP system for logged-in users to attend/withdraw from events
+- user can be RSVP for the same event after cancel too
 
 ## 🛠️ Technologies Used
 - Laravel 10
@@ -87,3 +89,11 @@ The application will be available at `http://127.0.0.1:8000/`
 - **URL:** `http://127.0.0.1:8000/events`
 - Users can view events and choose to attend or withdraw RSVP.
 ![alt text](logged-in-user-events-rsvp.png)
+
+
+## 📌 Assignment Progress Update
+
+- Completed whole used level functionality.
+- Focused on user-side functionality and UI optimizations (in progress).
+- Used Livewire 3 (wire:poll for hot reload) and Bootstrap CDN for styling.
+- Explored emit (used in Livewire 2) and dispatch (Livewire 3 property) for event refreshing but faced a small issue.
