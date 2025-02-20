@@ -48,11 +48,11 @@
         <form class="d-flex" role="search">
           @guest
         @if (Route::has('login'))
-      <a class="btn btn-outline-success" href="{{ route('login') }}" role="button">Login</a>
+      <a class="btn btn-success" href="{{ route('login') }}" role="button">Login</a>
     @endif
       @endguest
           @auth
-        <a class="btn btn-outline-danger" href="{{ route('logout') }}" role="button">Logout</a>
+        <a class="btn btn-primary" href="{{ route('logout') }}" role="button">Logout</a>
       @endauth
         </form>
       </div>
